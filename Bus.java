@@ -48,8 +48,15 @@ public class Bus {
         return seat[seat_number];
     }
 
-    public void setSeat(int seat_number) {
-        this.seat[seat_number]++;
+    public void setSeat(int seat_number) throws Exception {
+        try {
+            if (this.seat[seat_number] == 1)
+                throw new Exception("This seat is already occupied");
+            else 
+            this.seat[seat_number]++;
+        }catch (Exception e){
+            throw  e;
+        }
     }
 
     public Vector<Integer> available_seats(){
