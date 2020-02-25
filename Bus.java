@@ -44,15 +44,18 @@ public class Bus {
         }
     }
 
-    public int getSeat(int seat_number) {
-        return seat[seat_number];
+    public boolean seatIsAvailable(int seat_number) {
+        if(seat[seat_number] == 0)
+            return true;
+        else
+            return false;
     }
 
     public void setSeat(int seat_number) throws Exception {
         try {
             if (this.seat[seat_number] == 1)
                 throw new Exception("This seat is already occupied");
-            else 
+            else
             this.seat[seat_number]++;
         }catch (Exception e){
             throw  e;
